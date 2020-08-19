@@ -6,7 +6,9 @@
           <px-icon class="mr-2"></px-icon>
           <span class="font-semibold text-xl tracking-tight">Exchange</span>
         </div>
-        <div class="hidden sm:block w-full blok flex-grow lg:flex lg:items-center lg:wauto">
+        <div
+          class="hidden sm:block w-full blok flex-grow lg:flex lg:items-center lg:wauto"
+        >
           <div class="text-sm lg:flex-grow"></div>
         </div>
       </nav>
