@@ -48,9 +48,7 @@
         <div class="my-10 sm:mt-0 flex flex-col justify-center text-center">
           <button
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Cambiar
-          </button>
+          >Cambiar</button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -77,6 +75,7 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       asset: {},
       history: []
     };
@@ -110,13 +109,14 @@ export default {
   methods: {
     getCoin() {
       const id = this.$route.params.id;
+      this.isLoading = true;
 
-      Promise.all([api.getAsset(id), api.getAssetHistory(id)]).then(
-        ([asset, history]) => {
+      Promise.all([api.getAsset(id), api.getAssetHistory(id)])
+        .then(([asset, history]) => {
           this.asset = asset;
           this.history = history;
-        }
-      );
+        })
+        .finally(() => (this.isLoading = false));
     }
   }
 };
