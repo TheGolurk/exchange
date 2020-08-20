@@ -7,7 +7,6 @@
   </button>
 </template>
 
-
 <script>
 export default {
   name: "PxButton",
