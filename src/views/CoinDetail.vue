@@ -53,11 +53,7 @@
           <button
             @click="toggleConverted"
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            {{
-            fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD`
-            }}
-          </button>
+          >{{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}</button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -71,7 +67,7 @@
             </label>
           </div>
 
-          <span class="text-xl">{{ convertResult }} {{ fromUsd ? asset.symbol : 'USD' }}</span>
+          <span class="text-xl">{{ convertResult }} {{ fromUsd ? asset.symbol : "USD" }}</span>
         </div>
       </div>
 
@@ -95,7 +91,11 @@
             <px-button :isLoading="m.isLoading || false" v-if="!m.url" @click="getWebsite(m)">
               <slot>Obtener Link</slot>
             </px-button>
-            <a v-else class="hover:underline text-green-600" target="_blanck">{{ m.url }}</a>
+            <a v-else class="hover:underline text-green-600" target="_blanck">
+              {{
+              m.url
+              }}
+            </a>
           </td>
         </tr>
       </table>
@@ -204,7 +204,8 @@ export default {
 
 <style scoped>
 td {
-  padding: 10px;
+  padding: 30px;
+  margin: 10px;
   text-align: center;
 }
 </style>
